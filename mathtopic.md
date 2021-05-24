@@ -1,26 +1,27 @@
 目录
+
 [TOC]
 # 不定积分
 
 ## 有理函数积分
 
-$\displaystyle \int \frac{1+x^4}{1+x^6}dx$
+$ \displaystyle \int \frac{1+x^4}{1+x^6}dx$
 
 **🧠完全平方后凑添项，再用分部积分，最后一步需要将分母相乘得出$1+x^6$再凑微分**
 
-$=\displaystyle  \int \frac{1+x^4}{(1+x^2)(1-x^2+x^4)}dx$
+$ =\displaystyle  \int \frac{1+x^4}{(1+x^2)(1-x^2+x^4)}dx$
 
-$=\displaystyle  \int \frac{1-x^2+x^4+x^2}{(1+x^2)(1-x^2+x^4)}dx$
+$ =\displaystyle  \int \frac{1-x^2+x^4+x^2}{(1+x^2)(1-x^2+x^4)}dx$
 
-$=\displaystyle \int \frac{1+x^2-1}{(1+x^2)}dx+\int \frac{x^2}{1+x^6}dx$
+$ =\displaystyle \int \frac{1+x^2-1}{(1+x^2)}dx+\int \frac{x^2}{1+x^6}dx$
 
-$=x-\arctan x + \frac{1}{3}\arctan x^3 +C$
+$ =x-\arctan x + \frac{1}{3}\arctan x^3 +C$
 
 ****
 # 定积分
 ## 求解含定积分号的函数方程
 
-**设$f(x)=3x^2-2 \displaystyle \int_0^1 f(x)dx$，求$\displaystyle \int_1^2dx$**
+**设$ f(x)=3x^2-2 \displaystyle \int_0^1 f(x)dx$，求$\displaystyle \int_1^2dx$**
 
 **🧠先求出$f(x)$然后在$[1,2]$上积分**
 
