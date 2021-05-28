@@ -1,9 +1,23 @@
 #include "stdio.h"
+#include<stdlib.h>
+typedef struct link
+{
+    int *data;
+}link;
+
+
+void test(link* l)
+{
+    l=(link*)malloc(sizeof(link));
+    l->data=0;
+    printf("%d\n",l);
+}
 
 int main()
 {
-    int a=0;
-    scanf("%d",&a);
-    printf("ÄãºÃ");
+    link *l;
+    test(l);
+    printf("%d\n",l);
+
     return 0;
 }
