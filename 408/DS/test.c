@@ -1,29 +1,25 @@
-#include "stdio.h"
-#include<stdlib.h>
-#include"malloc.h"
-typedef struct link
-{
-    int *data;
-    struct link *next;
-}link;
+#include"stdio.h"
 
-void creatlink(struct link *l)
+int sum(int begin,int end)
 {
-    l=(link*)malloc(sizeof(link));
-    link *s;
-    for (int i = 0; i < 10; i++)
-    {
-        s=(link*)malloc(sizeof(link))
-        s->data=i;
-        s->next=l->next;
-        l->next=s;
-        printf(s->data);
+    int sum;
+    printf("%d\n",sum);
+    printf("%d\n",&sum);
+    for (int i = begin; i < end; i++)
+    {   
+        sum+=i;
     }
-    
-    //return l;
+    printf("%d ",sum);
+    return sum;
 }
 
-void main()
+int main ()
 {
-    creatlink(l);
+    int *p=0x4015b0;
+    printf("%d",p);
+    sum(1,10);
+    sum(10,20);
+    sum(20,60);
+    
+    return 0;
 }
