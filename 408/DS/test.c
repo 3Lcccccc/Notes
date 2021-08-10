@@ -1,16 +1,12 @@
-#include"stdio.h"
+#include "stdio.h"
+#include "math.h"
 
-int sum(int *begin,int *end)
+void main()
 {
-    int sum;
-    *begin=10;    
-    return 0;
-}
+    double x,s;
+    printf("input number:\n");
+    scanf("%lf",&x);
+    s=sin(x);
+    printf("sin of %lf is %lf\n",x,s);
 
-int main ()
-{
-    int *a=0,b=5;
-    sum(&a,&b);
-    printf("%d",a);
-    return 0;
 }
