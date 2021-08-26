@@ -43,10 +43,10 @@ struct  Link *Del(struct  Link *l,int *x)
 int main(int argc, char const *argv[])
 {
     struct Link *l=(struct Link*)malloc(sizeof(struct Link));
-    l=create(l);
+    //l=create(l);
     //l=Del(l,5);
-    struct Link *l2=l->next;
-    l=l2->next;
+    //struct Link *l2=l->next;
+    //l=l2->next;
     // for (int i = 0; i < 10; i++)
     // {
     //     printf("%d\n",l->data);
