@@ -1,57 +1,48 @@
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdio.h>
 
-typedef struct Link
+typedef struct bitree
 {
-    struct Link * next;
-    int * data;
-}Link, *node;
-struct  Link *create(struct Link *l)
-{
-    struct Link *l1=(struct Link*)malloc(sizeof(struct Link));
-    struct Link *l2;
-    l1->data=0;
-    l=l1;
-    for (int i=1; i < 10; i++)
-    {
-        l2=(struct Link*)malloc(sizeof(struct Link));
-        l2->data=i;
-        l1->next=l2;
-        l1=l2;
-    }
-    return l;
-}
+    struct bitree *left;
+    struct bitree *right;
+    int data;
+};
 
-struct  Link *Del(struct  Link *l,int *x)
+int b(struct bitree *t,int x,int prit)
 {
-    if (l==NULL)
+    //if(t->data==x)
     {
-        return NULL;
+        //return 1;
     }
-    l->next=Del(l->next,x);
-    printf("%d\n",l->data);
-    if (l->data==x)
+    prit=b(t->left,x,prit);
+    prit=b(t->right,x,prit);
+    if(t)
     {
-        return l->next;
+    printf("%d",t->data);
     }
-    else 
-    {
-        return l;
-    }   
+    return 0;
 }
 
 int main(int argc, char const *argv[])
 {
-    struct Link *l=(struct Link*)malloc(sizeof(struct Link));
-    //l=create(l);
-    //l=Del(l,5);
-    //struct Link *l2=l->next;
-    //l=l2->next;
-    // for (int i = 0; i < 10; i++)
-    // {
-    //     printf("%d\n",l->data);
-    //     l=l->next;
-    // }
-    
+    struct bitree *arr[10];
+    struct bitree *T=(struct bitree*)malloc(sizeof(struct bitree));
+    struct bitree *P;
+    arr[0]=T;
+    T->data=0;
+    for(int i=1;i<10;i+=2)
+    {
+        T=arr[i];
+        P=(struct bitree*)malloc(sizeof(struct bitree));
+        P->data=i;
+        printf("%d",P->data);
+        T->left=P;
+        arr[i]=P;
+        P=(struct bitree*)malloc(sizeof(struct bitree));
+        T->right=P;
+        P->data=i+1;
+        printf("%d",P->data);
+        arr[i+1]=P;
+    }
+    b(T,3,0);
     return 0;
 }

@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xstring": "c",
+        "xutility": "c",
+        "ios": "c",
+        "xiosbase": "c"
     }
 }
