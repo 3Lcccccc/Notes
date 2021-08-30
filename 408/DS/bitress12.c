@@ -9,40 +9,47 @@ typedef struct bitree
 
 int b(struct bitree *t,int x,int prit)
 {
-    //if(t->data==x)
+    if(!t)
+    return 0;
+    if(t->data==x)
     {
-        //return 1;
+        return 1;
     }
     prit=b(t->left,x,prit);
+    if(!prit)//如果左孩子中有x就不查找右孩子
     prit=b(t->right,x,prit);
-    if(t)
+    if(prit)
     {
-    printf("%d",t->data);
+        printf("%d\n",t->data);
+        return 0; //返回第一个父亲
     }
-    return 0;
+    return prit;
 }
 
 int main(int argc, char const *argv[])
 {
+    int rear=-1,front=-1;
     struct bitree *arr[10];
     struct bitree *T=(struct bitree*)malloc(sizeof(struct bitree));
     struct bitree *P;
-    arr[0]=T;
     T->data=0;
+    arr[++rear]=T;
     for(int i=1;i<10;i+=2)
     {
-        T=arr[i];
+        T=arr[++front];
         P=(struct bitree*)malloc(sizeof(struct bitree));
         P->data=i;
-        printf("%d",P->data);
+        P->left=NULL;
+        P->right=NULL;
         T->left=P;
-        arr[i]=P;
+        arr[++rear]=P;
         P=(struct bitree*)malloc(sizeof(struct bitree));
         T->right=P;
         P->data=i+1;
-        printf("%d",P->data);
-        arr[i+1]=P;
+        P->left=NULL;
+        P->right=NULL;
+        arr[++rear]=P;
     }
-    b(T,3,0);
+    b(arr[0],10,0);
     return 0;
 }

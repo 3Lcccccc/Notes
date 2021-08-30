@@ -1,6 +1,6 @@
 #include "iostream"
 
-void test(int &a,int &b)
+int test(int &a,int &b)
 {
     int *a1=&a;
     int *b1;
@@ -8,13 +8,14 @@ void test(int &a,int &b)
     a1=&b;
     printf("%d\n",*b1);
     printf("%d\n",*a1);
+    return a1==b1?10:2;
 }
 
 int main(int argc, char const *argv[])
 {
     int a=0;
     int b=1;
-    printf("%d\n",&a);
-    test(a,b);
+    a=test(a,b);
+    printf("%d\n",a);
     return 0;
 }
